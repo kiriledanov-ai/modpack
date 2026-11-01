@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Lunacy</title>
+  <style>
+    :root{color-scheme:dark;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;background:#111417;color:#f4f5f7}
+    body{width:320px;margin:0;padding:20px;background:#111417}
+    h1{margin:0 0 4px;font:900 25px/1 sans-serif;letter-spacing:-1px;text-transform:uppercase}h1 span{color:#2cc9ff}
+    p{margin:0 0 18px;color:#a8b0b8;font-size:12px;line-height:1.5}
+    label{display:block;margin:12px 0 6px;color:#f5d547;font-size:11px;text-transform:uppercase;letter-spacing:1px}
+    input{box-sizing:border-box;width:100%;height:40px;padding:0 11px;border:1px solid #35404a;border-radius:5px;outline:0;background:#1f2429;color:#fff;font:12px ui-monospace,monospace}
+    input:focus{border-color:#2cc9ff;box-shadow:0 0 0 2px #2cc9ff25}
+    button{width:100%;height:42px;margin-top:18px;border:0;border-radius:5px;background:#f5d547;color:#17191c;font:900 12px ui-monospace,monospace;letter-spacing:.6px;cursor:pointer}
+    button:hover{filter:brightness(1.08)}button:active{transform:translateY(1px)}
+    #status{min-height:18px;margin:12px 0 0;color:#2cc9ff;text-align:center}
+  </style>
+</head>
+<body>
+  <h1>Luna<span>cy</span></h1>
+  <p>Онлайн-подключение и привязка к профилю mope.io.</p>
+  <label for="serverUrl">Адрес сервера</label>
+  <input id="serverUrl" type="url" placeholder="https://lunacy.example.com" spellcheck="false">
+  <label for="manualHandle">@handle (если не определён)</label>
+  <input id="manualHandle" placeholder="cleverok" maxlength="40" spellcheck="false">
+  <button id="save" type="button">Сохранить</button>
+  <p id="status" role="status"></p>
+  <script src="popup.js"></script>
+</body>
+</html>

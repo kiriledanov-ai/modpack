@@ -1,0 +1,80 @@
+#lunacy-root{--ln-bg:#111417;--ln-panel:#1b1f23;--ln-raised:#242a30;--ln-line:#35404a;--ln-text:#f4f5f7;--ln-muted:#a8b0b8;--ln-cyan:#2cc9ff;--ln-yellow:#f5d547;--ln-pink:#ff4f9a;position:fixed;inset:0;z-index:2147483000;pointer-events:none;font-family:ui-monospace,SFMono-Regular,Consolas,"Liberation Mono",monospace;color:var(--ln-text);font-size:12px;line-height:1.5;color-scheme:dark}
+#lunacy-root *{box-sizing:border-box}
+#lunacy-root button,#lunacy-root input,#lunacy-root select,#lunacy-root textarea{font:inherit}
+#lunacy-root button{cursor:pointer}
+#lunacy-root button:focus-visible,#lunacy-root input:focus-visible,#lunacy-root select:focus-visible,#lunacy-root textarea:focus-visible{outline:2px solid var(--ln-cyan);outline-offset:2px}
+#lunacy-canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+.lunacy-panel{position:fixed;top:16px;right:16px;width:366px;max-width:calc(100vw - 24px);max-height:calc(100vh - 32px);display:flex;flex-direction:column;overflow:hidden;pointer-events:auto;background:color-mix(in srgb,var(--ln-bg) 94%,transparent);border:1px solid #43505b;border-radius:9px;box-shadow:0 18px 65px #0009,0 0 28px #2cc9ff12;backdrop-filter:blur(14px);animation:lunacy-in .18s ease-out}
+.lunacy-panel[hidden]{display:none}
+.lunacy-head{display:flex;align-items:center;gap:11px;min-height:64px;padding:11px 12px;border-bottom:1px solid var(--ln-line);background:#1f1f1f;cursor:grab;touch-action:none;user-select:none}
+.lunacy-head:active{cursor:grabbing}
+.lunacy-mark{position:relative;width:35px;height:35px;flex:0 0 auto;border-radius:50%;background:var(--ln-cyan);box-shadow:0 0 18px #2cc9ff55}
+.lunacy-mark:after{content:"";position:absolute;left:11px;top:-4px;width:33px;height:33px;border-radius:50%;background:#1f1f1f}
+.lunacy-brand{min-width:0;flex:1}
+.lunacy-title{font-family:Impact,"Arial Narrow",sans-serif;font-size:24px;line-height:1;letter-spacing:.6px;text-transform:uppercase}
+.lunacy-subtitle{margin-top:5px;color:var(--ln-muted);font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.lunacy-icon-button{display:grid;place-items:center;width:34px;height:34px;padding:0;border:1px solid var(--ln-line);border-radius:5px;background:transparent;color:var(--ln-text);font-size:16px;line-height:1}
+.lunacy-icon-button:hover{border-color:var(--ln-cyan);color:var(--ln-cyan)}
+.lunacy-statusline{display:flex;align-items:center;gap:8px;padding:8px 13px;border-bottom:1px solid #35404a80;color:var(--ln-muted);font-size:10px;text-transform:uppercase;letter-spacing:.8px}
+.lunacy-dot{width:7px;height:7px;border-radius:50%;background:#68727a}
+.lunacy-dot.online{background:var(--ln-cyan);box-shadow:0 0 10px var(--ln-cyan)}
+.lunacy-dot.error{background:var(--ln-pink)}
+.lunacy-role{margin-left:auto;color:var(--ln-yellow);font-weight:800}
+.lunacy-tabs{display:flex;gap:0;padding:0 10px;border-bottom:1px solid var(--ln-line);background:#15191d}
+.lunacy-tab{position:relative;flex:1;min-height:40px;padding:0 5px;border:0;background:transparent;color:var(--ln-muted);font-size:10px;font-weight:800;text-transform:uppercase;letter-spacing:.5px}
+.lunacy-tab:hover{color:var(--ln-text)}
+.lunacy-tab.active{color:var(--ln-cyan)}
+.lunacy-tab.active:after{content:"";position:absolute;left:12px;right:12px;bottom:-1px;height:2px;background:var(--ln-cyan)}
+.lunacy-tab[hidden]{display:none}
+.lunacy-body{overflow:auto;overscroll-behavior:contain;padding:14px;scrollbar-width:thin;scrollbar-color:var(--ln-line) transparent}
+.lunacy-view[hidden]{display:none}
+.lunacy-section+.lunacy-section{margin-top:17px;padding-top:15px;border-top:1px solid #35404a80}
+.lunacy-label-row{display:flex;align-items:baseline;justify-content:space-between;gap:12px;margin-bottom:7px}
+.lunacy-label{color:var(--ln-text);font-size:11px;font-weight:700}
+.lunacy-value{color:var(--ln-cyan);font-size:11px;font-weight:800}
+.lunacy-hint{margin:7px 0 0;color:var(--ln-muted);font-size:10px;line-height:1.55}
+.lunacy-range{width:100%;height:18px;margin:0;accent-color:var(--ln-cyan);cursor:pointer}
+.lunacy-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.lunacy-field{display:block;min-width:0;margin-bottom:10px}
+.lunacy-field>span{display:block;margin-bottom:5px;color:var(--ln-muted);font-size:10px;text-transform:uppercase;letter-spacing:.5px}
+.lunacy-input,.lunacy-select,.lunacy-textarea{width:100%;min-height:36px;padding:7px 9px;border:1px solid var(--ln-line);border-radius:5px;background:var(--ln-raised);color:var(--ln-text);user-select:text}
+.lunacy-input:hover,.lunacy-select:hover,.lunacy-textarea:hover{border-color:#566674}
+.lunacy-textarea{min-height:64px;resize:vertical;word-break:break-all}
+.lunacy-color{width:100%;height:36px;padding:3px;border:1px solid var(--ln-line);border-radius:5px;background:var(--ln-raised);cursor:pointer}
+.lunacy-checks{display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.lunacy-check{display:flex;align-items:center;gap:8px;min-height:34px;padding:5px 8px;border:1px solid #35404a80;border-radius:5px;color:var(--ln-text);cursor:pointer}
+.lunacy-check:hover{border-color:var(--ln-cyan)}
+.lunacy-check input{width:15px;height:15px;margin:0;accent-color:var(--ln-cyan)}
+.lunacy-button{display:inline-flex;align-items:center;justify-content:center;min-height:37px;padding:8px 12px;border:1px solid var(--ln-line);border-radius:5px;background:var(--ln-raised);color:var(--ln-text);font-weight:800;font-size:11px}
+.lunacy-button:hover{border-color:var(--ln-cyan);color:var(--ln-cyan)}
+.lunacy-button:active{transform:translateY(1px)}
+.lunacy-button.primary{border-color:var(--ln-yellow);background:var(--ln-yellow);color:#17191c}
+.lunacy-button.primary:hover{color:#17191c;filter:brightness(1.08)}
+.lunacy-button.danger{color:var(--ln-pink)}
+.lunacy-button:disabled{opacity:.45;cursor:not-allowed}
+.lunacy-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+.lunacy-actions .lunacy-button{flex:1}
+.lunacy-preview{padding:13px 8px;text-align:center;border-top:1px solid var(--ln-line);border-bottom:1px solid var(--ln-line);background:#0b0e11}
+.lunacy-nick{display:inline-block;font-family:Impact,"Arial Narrow",sans-serif;font-size:23px;letter-spacing:.7px;color:var(--ln-cyan);text-shadow:0 0 12px currentColor}
+.lunacy-nick.rainbow{background:linear-gradient(90deg,#ff4f9a,#f5d547,#2cc9ff,#b68cff,#ff4f9a);background-size:240% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:lunacy-rainbow 2.6s linear infinite;text-shadow:none;filter:drop-shadow(0 0 7px #2cc9ff88)}
+.lunacy-nick.pulse{animation:lunacy-pulse 1.8s ease-in-out infinite}
+.lunacy-userline{display:flex;align-items:center;gap:8px;min-width:0}
+.lunacy-userline strong{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.lunacy-badge{flex:0 0 auto;padding:1px 5px;border:1px solid var(--ln-line);border-radius:3px;color:var(--ln-yellow);font-size:9px;text-transform:uppercase}
+.lunacy-list{display:flex;flex-direction:column;max-height:205px;overflow:auto;border-top:1px solid var(--ln-line);scrollbar-width:thin}
+.lunacy-user{display:flex;align-items:center;gap:8px;width:100%;min-height:45px;padding:7px 3px;border:0;border-bottom:1px solid #35404a70;background:transparent;color:var(--ln-text);text-align:left}
+.lunacy-user:hover{background:#2cc9ff0b}
+.lunacy-user .lunacy-userline{flex:1}
+.lunacy-empty{padding:18px 5px;color:var(--ln-muted);text-align:center;font-size:11px}
+.lunacy-notice{margin:8px 0;padding:8px 10px;border-left:2px solid var(--ln-cyan);background:#2cc9ff0b;color:var(--ln-muted);font-size:10px;line-height:1.55}
+.lunacy-key{display:none;margin-top:10px}
+.lunacy-key.visible{display:block}
+.lunacy-toast{position:fixed;left:50%;bottom:22px;max-width:min(440px,calc(100vw - 30px));padding:10px 14px;transform:translateX(-50%);border:1px solid var(--ln-cyan);border-radius:5px;background:#111417f2;color:var(--ln-text);box-shadow:0 8px 30px #0008;pointer-events:none;animation:lunacy-in .16s ease-out}
+.lunacy-launcher{position:fixed;right:18px;top:18px;width:44px;height:44px;border:1px solid #43505b;border-radius:50%;background:#1f1f1f;color:var(--ln-cyan);box-shadow:0 0 22px #2cc9ff33;pointer-events:auto;font:900 18px/1 Impact,sans-serif}
+.lunacy-launcher[hidden]{display:none}
+.lunacy-small{font-size:10px;color:var(--ln-muted)}
+@keyframes lunacy-in{from{opacity:0;transform:translateY(-5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lunacy-rainbow{to{background-position:240% 0}}
+@keyframes lunacy-pulse{50%{opacity:.58;filter:brightness(1.5)}}
+@media(max-width:520px){.lunacy-panel{top:8px;right:8px;width:calc(100vw - 16px);max-width:none;max-height:calc(100dvh - 16px)}.lunacy-head{min-height:58px}.lunacy-body{padding:12px}.lunacy-title{font-size:22px}}
+@media(prefers-reduced-motion:reduce){.lunacy-panel,.lunacy-toast,.lunacy-nick.rainbow,.lunacy-nick.pulse{animation:none}}

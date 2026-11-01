@@ -1,0 +1,13 @@
+services:
+  lunacy:
+    build: .
+    restart: unless-stopped
+    ports:
+      - "8787:8787"
+    environment:
+      OWNER_HANDLE: cleverok
+      # Для постоянного своего ключа задайте OWNER_BOOTSTRAP_KEY здесь или в окружении.
+    volumes:
+      - lunacy-data:/app/data
+volumes:
+  lunacy-data:

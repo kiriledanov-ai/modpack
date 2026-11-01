@@ -1,0 +1,17 @@
+{
+  "name": "lunacy-online-server",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Online roles, nicknames and presence for the Lunacy mope.io extension",
+  "type": "module",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node index.js",
+    "test": "node --test test/*.test.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.6"
+  }
+}

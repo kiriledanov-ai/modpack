@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "users": {
+    "cleverok": {
+      "handle": "cleverok",
+      "displayName": "cleverbestix",
+      "gameName": "Армен",
+      "role": "creator",
+      "nickname": {
+        "enabled": true,
+        "mode": "rainbow",
+        "colors": [
+          "#f5d547",
+          "#2cc9ff"
+        ],
+        "glow": 22,
+        "speed": 1.35
+      },
+      "visuals": {
+        "comets": true,
+        "crystals": true,
+        "guns": true,
+        "revolver": true
+      },
+      "keyHash": null,
+      "createdAt": "2026-11-01T15:11:35.409Z",
+      "updatedAt": "2026-11-01T15:11:35.409Z"
+    }
+  }
+}
